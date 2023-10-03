@@ -15,8 +15,8 @@ def vale_a_pena_prazo_ou_vista(preco_vista, preco_prazo, taxa_anual, num_parcela
     valor_investido = preco_prazo
     rendimento_liquido = calcular_rendimento(valor_investido, taxa_anual, num_parcelas - 1)
 
-    resposta = f"Vale a pena pagar { 'a prazo' if rendimento_liquido >= desconto else 'à vista' }" \
-                f"O rendimento do valor a prazo será de R$ {rendimento_liquido:.2f}, enquanto o desconto é de R$ {desconto:.2f}."
+    resposta = f"Vale a pena pagar { 'a prazo' if rendimento_liquido >= desconto else 'à vista' }." \
+                f" O rendimento do valor a prazo será de R$ {rendimento_liquido:.2f}, enquanto o desconto é de R$ {desconto:.2f}"
     return resposta
 
 preco_a_vista = float(input("Digite o preço à vista: "))
