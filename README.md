@@ -1,7 +1,13 @@
 # Installment Advice
 A simple program for purchase recomendation, based on available discounts and instalment options
 
+## Explanation
+
 For installment payment, we assume an investment of the total value with a fixed annual rate of return. Morevoer, it consider a tax fee of 22.5% on income and installments of equal value without any extra tax.
+
+## Requirements
+
+- Python 3+
 
 ## Example
 
