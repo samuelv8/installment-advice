@@ -1,8 +1,12 @@
 def calcular_rendimento(investimento_inicial, taxa_anual, meses):
-    imposto = 0.225  # Imposto de 22,5% sobre o lucro
+    if meses < 1:
+        return investimento_inicial # sem rendimentos
+    
+    imposto = 0.225  # imposto de 22,5% sobre o lucro
     total_bruto = 0.0 + investimento_inicial
     parcela = investimento_inicial / meses
 
+    # assume que a primeira parcela será paga só daqui um mês
     for _ in range(meses):
         total_bruto = total_bruto * pow((1 + taxa_anual), (1 / 12))
         total_bruto -= parcela
@@ -13,7 +17,7 @@ def calcular_rendimento(investimento_inicial, taxa_anual, meses):
 def vale_a_pena_prazo_ou_vista(preco_vista, preco_prazo, taxa_anual, num_parcelas):
     desconto = abs(preco_vista - preco_prazo)
     valor_investido = preco_prazo
-    rendimento_liquido = calcular_rendimento(valor_investido, taxa_anual, num_parcelas - 1)
+    rendimento_liquido = calcular_rendimento(valor_investido, taxa_anual, num_parcelas)
 
     resposta = f"Vale a pena pagar { 'a prazo' if rendimento_liquido >= desconto else 'à vista' }." \
                 f" O rendimento do valor a prazo será de R$ {rendimento_liquido:.2f}, enquanto o desconto é de R$ {desconto:.2f}"
